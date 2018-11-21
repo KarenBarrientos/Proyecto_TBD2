@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @author Karen Medina
  */
 public class Farmacia {
-    private String numIdentificacion;
+    public String numIdentificacion;
     private String direccion;
     private ArrayList<Persona_Propietario> listPropietario= new ArrayList();
     private ArrayList<Persona_Farmaceutico> listFarmaceutico= new ArrayList();

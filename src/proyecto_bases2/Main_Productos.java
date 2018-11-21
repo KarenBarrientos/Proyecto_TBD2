@@ -20,8 +20,10 @@ public class Main_Productos extends javax.swing.JFrame {
      */
     public Main_Productos() {
         initComponents();
+        /*
         Main_Farmacia abrir = new Main_Farmacia();
         abrir.setVisible(true);
+        */
     }
 
     /**
@@ -836,11 +838,11 @@ public class Main_Productos extends javax.swing.JFrame {
 
         if (rb_siCasa.isSelected()) {
             esta = true;
-            rb_noCasa.setVisible(false);
+            //rb_noCasa.setVisible(false);
         }
         if (rb_noCasa.isSelected()) {
             esta = true;
-            rb_siCasa.setVisible(false);
+            //rb_siCasa.setVisible(false);
         }
         
         tip="Farmacia_Casa";
@@ -849,12 +851,14 @@ public class Main_Productos extends javax.swing.JFrame {
         prod.add(new Productos(id, nom, fabrica, pCoste, pVenta, unid, esta));
         System.out.println(prod);
         
+        /*
         DefaultComboBoxModel modelo = new DefaultComboBoxModel();
         
         for (int i = 0; i < prod_fCasa.size(); i++) {
             modelo.addElement(prod_fCasa.get(i).getNombre());
         }
         Main_Farmacia.cb_pFC.setModel(modelo);
+        */
         
         JOptionPane.showMessageDialog(this, "Se agregó");
         
@@ -896,12 +900,14 @@ public class Main_Productos extends javax.swing.JFrame {
         prod.add(new Productos(id2, nom2, fabrica2, pCoste2, pVenta2, unid2, esta2));
         System.out.println(prod);
         
+        /*
         DefaultComboBoxModel modelo2 = new DefaultComboBoxModel();
         
         for (int i = 0; i < prod__Cosmet.size(); i++) {
             modelo2.addElement(prod__Cosmet.get(i).getNombre());
         }
         Main_Farmacia.cb_pC.setModel(modelo2);
+        */
         
         JOptionPane.showMessageDialog(this, "Se agregó");
 
@@ -943,12 +949,14 @@ public class Main_Productos extends javax.swing.JFrame {
         prod.add(new Productos(id3, nom3, fabrica3, pCoste3, pVenta3, unid3, esta3));
         System.out.println(prod);
         
+        /*
         DefaultComboBoxModel modelo3 = new DefaultComboBoxModel();
         
         for (int i = 0; i < prod_Hig.size(); i++) {
             modelo3.addElement(prod_Hig.get(i).getNombre());
         }
         Main_Farmacia.cb_pH.setModel(modelo3);
+        */
         
         JOptionPane.showMessageDialog(this, "Se agregó");
 
@@ -989,12 +997,14 @@ public class Main_Productos extends javax.swing.JFrame {
         prod.add(new Productos(id4, nom4, fabrica4, pCoste4, pVenta4, unid4, esta4));
         System.out.println(prod);
         
+        /*
         DefaultComboBoxModel modelo4 = new DefaultComboBoxModel();
         
         for (int i = 0; i < prod_Infa.size(); i++) {
             modelo4.addElement(prod_Infa.get(i).getNombre());
         }
         Main_Farmacia.cb_pI.setModel(modelo4);
+        */
         
         JOptionPane.showMessageDialog(this, "Se agregó");
 
@@ -1134,8 +1144,8 @@ public class Main_Productos extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     ArrayList<Productos> prod = new ArrayList();
-    ArrayList<Prod_FarmaciaCasa>prod_fCasa = new ArrayList();
-    ArrayList<Prod_Cosmetica> prod__Cosmet = new ArrayList();
+    public ArrayList<Prod_FarmaciaCasa>prod_fCasa = new ArrayList();
+    public ArrayList<Prod_Cosmetica> prod__Cosmet = new ArrayList();
     ArrayList<Prod_Higiene> prod_Hig = new ArrayList();
     ArrayList<Prod_Infantil> prod_Infa = new ArrayList();
 

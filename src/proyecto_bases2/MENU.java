@@ -94,8 +94,11 @@ public class MENU extends javax.swing.JFrame {
         try {
             Main_Farmacia mF = new Main_Farmacia();
             panel_principal.add(mF);
-            mF.show();
+            mF.pack(); // la acopla a los objetos que tiene dentro
+            mF.setLocationRelativeTo(this); // la pone donde esta ubicada la ventana padre
+            mF.setVisible(true);
             mF.setLocation(50, 5);
+            
         } catch (Exception e) {
         }
     }//GEN-LAST:event_jMenuItem1ActionPerformed
@@ -104,7 +107,9 @@ public class MENU extends javax.swing.JFrame {
         try {
             Main_Productos mP = new Main_Productos();
             panel_principal.add(mP);
-            mP.show();
+            mP.pack(); // la acopla a los objetos que tiene dentro
+            mP.setLocationRelativeTo(this); // la pone donde esta ubicada la ventana padre
+            mP.setVisible(true);
             mP.setLocation(50, 5);
         } catch (Exception e) {
         }

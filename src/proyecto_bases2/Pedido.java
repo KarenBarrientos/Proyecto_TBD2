@@ -12,13 +12,13 @@ import java.util.ArrayList;
  * @author Karen Medina
  */
 public class Pedido {
-    public ArrayList<Prod_FarmaciaCasa> listProduFCasa;
+    private ArrayList<Prod_FarmaciaCasa> listProduFCasa = new ArrayList();
     private int unidFC;
-    public ArrayList<Prod_Cosmetica> listProduCosmetic;
+    private ArrayList<Prod_Cosmetica> listProduCosmetic = new ArrayList();
     private int unidPC;
-    public ArrayList<Prod_Infantil> listProdInfantil;
+    private ArrayList<Prod_Infantil> listProdInfantil = new ArrayList();
     private int unidI;
-    public ArrayList<Prod_Higiene> listProdHigiene;
+    private ArrayList<Prod_Higiene> listProdHigiene = new ArrayList();
     private int unidH;
 
     public Pedido() {
