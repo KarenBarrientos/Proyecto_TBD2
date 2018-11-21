@@ -9,12 +9,12 @@ package proyecto_bases2;
  *
  * @author Karen Medina
  */
-public class Prod_Cosmetica extends Productos{
+public class Prod_Cosmetica{
     private String tipo;
     
     public Prod_Cosmetica() {
     }
-
+    /*
     public Prod_Cosmetica(String tipo, String identificación, String nombre, String fabricante, double precioCosto, double precioVenta, int unidades, boolean estaProtegido) {
         super(identificación, nombre, fabricante, precioCosto, precioVenta, unidades, estaProtegido);
         this.tipo = tipo;
@@ -28,6 +28,7 @@ public class Prod_Cosmetica extends Productos{
         this.tipo = tipo;
     }
 
+*/
     @Override
     public String toString() {
         return tipo;

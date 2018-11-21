@@ -41,16 +41,10 @@ public class Main_Farmacia extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         tf_idPropietario = new javax.swing.JTextField();
         tf_nomPropietario = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        rb_siProp = new javax.swing.JRadioButton();
-        rb_noProp = new javax.swing.JRadioButton();
         btn_AgregarPropietarios = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        rb_siFarmac = new javax.swing.JRadioButton();
-        rb_noFarmac = new javax.swing.JRadioButton();
         tf_idFarmaceutico = new javax.swing.JTextField();
         tf_nomFarmaceutico = new javax.swing.JTextField();
         btn_AgregarFarmaceuticos = new javax.swing.JButton();
@@ -134,16 +128,6 @@ public class Main_Farmacia extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel7.setText("Identificación:");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel4.setText("¿Es responsable?");
-
-        bg_responsableProp.add(rb_siProp);
-        rb_siProp.setSelected(true);
-        rb_siProp.setText("Si");
-
-        bg_responsableProp.add(rb_noProp);
-        rb_noProp.setText("No");
-
         btn_AgregarPropietarios.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btn_AgregarPropietarios.setText("Agregar");
         btn_AgregarPropietarios.addActionListener(new java.awt.event.ActionListener() {
@@ -168,15 +152,9 @@ public class Main_Farmacia extends javax.swing.JFrame {
                             .addComponent(tf_idPropietario)
                             .addComponent(tf_nomPropietario, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btn_AgregarPropietarios)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(18, 18, 18)
-                                .addComponent(rb_siProp)))
-                        .addGap(18, 18, 18)
-                        .addComponent(rb_noProp)))
-                .addContainerGap(97, Short.MAX_VALUE))
+                        .addGap(68, 68, 68)
+                        .addComponent(btn_AgregarPropietarios)))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,12 +167,7 @@ public class Main_Farmacia extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(tf_nomPropietario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(rb_siProp)
-                    .addComponent(rb_noProp))
-                .addGap(30, 30, 30)
+                .addGap(71, 71, 71)
                 .addComponent(btn_AgregarPropietarios)
                 .addContainerGap(38, Short.MAX_VALUE))
         );
@@ -206,16 +179,6 @@ public class Main_Farmacia extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel8.setText("Nombre:");
-
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel9.setText("¿Es responsable?");
-
-        bg_responsableFarmac.add(rb_siFarmac);
-        rb_siFarmac.setSelected(true);
-        rb_siFarmac.setText("Si");
-
-        bg_responsableFarmac.add(rb_noFarmac);
-        rb_noFarmac.setText("No");
 
         btn_AgregarFarmaceuticos.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btn_AgregarFarmaceuticos.setText("Agregar");
@@ -241,15 +204,9 @@ public class Main_Farmacia extends javax.swing.JFrame {
                             .addComponent(tf_idFarmaceutico)
                             .addComponent(tf_nomFarmaceutico, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btn_AgregarFarmaceuticos)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addGap(18, 18, 18)
-                                .addComponent(rb_siFarmac)))
-                        .addGap(18, 18, 18)
-                        .addComponent(rb_noFarmac)))
-                .addContainerGap(98, Short.MAX_VALUE))
+                        .addGap(68, 68, 68)
+                        .addComponent(btn_AgregarFarmaceuticos)))
+                .addContainerGap(114, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -262,12 +219,7 @@ public class Main_Farmacia extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(tf_nomFarmaceutico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(rb_siFarmac)
-                    .addComponent(rb_noFarmac))
-                .addGap(30, 30, 30)
+                .addGap(71, 71, 71)
                 .addComponent(btn_AgregarFarmaceuticos)
                 .addContainerGap(39, Short.MAX_VALUE))
         );
@@ -759,6 +711,8 @@ public class Main_Farmacia extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel2.setText("Número Identificación: ");
 
+        tf_numIdenti.setEditable(false);
+
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel3.setText("Dirección Completa: ");
         jLabel3.setToolTipText("");
@@ -850,48 +804,30 @@ public class Main_Farmacia extends javax.swing.JFrame {
 
     private void btn_AgregarPropietariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AgregarPropietariosActionPerformed
         String id, nombr;
-        boolean responsable = false;
 
         id = tf_idPropietario.getText();
         nombr = tf_nomPropietario.getText();
 
-        if (rb_siProp.isSelected()) {
-            responsable = true;
-        }
-        if (rb_noProp.isSelected()) {
-            responsable = false;
-        }
 
-        listProp.add(new Persona_Propietario(responsable, nombr, id));
+        listProp.add(new Persona_Propietario(nombr, id));
         JOptionPane.showMessageDialog(this, "Se agregó el Propietario");
 
         tf_idPropietario.setText("");
         tf_nomPropietario.setText("");
-        rb_siProp.setSelected(true);
-        rb_noProp.setSelected(false);
     }//GEN-LAST:event_btn_AgregarPropietariosActionPerformed
 
     private void btn_AgregarFarmaceuticosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AgregarFarmaceuticosActionPerformed
         String id2, nombr2;
-        boolean responsable2 = false;
 
         id2 = tf_idFarmaceutico.getText();
         nombr2 = tf_nomFarmaceutico.getText();
 
-        if (rb_siFarmac.isSelected()) {
-            responsable2 = true;
-        }
-        if (rb_noFarmac.isSelected()) {
-            responsable2 = false;
-        }
 
-        listFarmaceutico.add(new Persona_Farmaceutico(responsable2, nombr2, id2));
+        listFarmaceutico.add(new Persona_Farmaceutico(nombr2, id2));
         JOptionPane.showMessageDialog(this, "Se agregó el Farmaceutico");
 
         tf_idFarmaceutico.setText("");
         tf_nomFarmaceutico.setText("");
-        rb_siFarmac.setSelected(true);
-        rb_noFarmac.setSelected(false);
     }//GEN-LAST:event_btn_AgregarFarmaceuticosActionPerformed
 
     private void btn_AgregarFarmaciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AgregarFarmaciaActionPerformed
@@ -920,9 +856,9 @@ public class Main_Farmacia extends javax.swing.JFrame {
         pc = Double.parseDouble(tf_pcC.getText());
         pv = Double.parseDouble(tf_pvC.getText());
         cantida1 = (int) js_fCasa.getValue();
-        prod_fCasa.add(new Prod_FarmaciaCasa(tip, tf_idC.getText(), tf_nC.getText(), tf_fC.getText(), pc, pv, cantida1, true));
+        //prod_fCasa.add(new Prod_FarmaciaCasa(tip, tf_idC.getText(), tf_nC.getText(), tf_fC.getText(), pc, pv, cantida1, true));
         JOptionPane.showMessageDialog(this, "Se guardó correctamente");
-        System.out.println(prod_fCasa);
+        //System.out.println(prod_fCasa);
 
         tf_idC.setText("");
         tf_nC.setText("");
@@ -936,7 +872,7 @@ public class Main_Farmacia extends javax.swing.JFrame {
         ped.add(new Pedido(prod_fCasa, cantida1, prod__Cosmet, cantida2, prod_Infa, cantida3, prod_Hig, cantida4));
         System.out.println(ped);
         JOptionPane.showMessageDialog(this, "Se está procesando...");
-
+        /*
         try {
             // agregar a la tabla
             DefaultTableModel mod, mod1, mod2, mod3;
@@ -983,8 +919,8 @@ public class Main_Farmacia extends javax.swing.JFrame {
             
         } catch (Exception e) {
         }
-
-
+        */
+        
     }//GEN-LAST:event_btn_PedirActionPerformed
 
     private void btn_guardarPedido_CosmeticaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarPedido_CosmeticaActionPerformed
@@ -993,9 +929,9 @@ public class Main_Farmacia extends javax.swing.JFrame {
         pC = Double.parseDouble(tf_pcCosm.getText());
         pV = Double.parseDouble(tf_pvCosm.getText());
         cantida2 = (int) js_cantC.getValue();
-        prod__Cosmet.add(new Prod_Cosmetica(tipo, tf_idCosm.getText(), tf_nCosm.getText(), tf_fCosm.getText(), pC, pV, cantida2, true));
+        //prod__Cosmet.add(new Prod_Cosmetica(tipo, tf_idCosm.getText(), tf_nCosm.getText(), tf_fCosm.getText(), pC, pV, cantida2, true));
         JOptionPane.showMessageDialog(this, "Se guardó correctamente");
-        System.out.println(prod__Cosmet);
+        //System.out.println(prod__Cosmet);
 
         tf_idCosm.setText("");
         tf_nCosm.setText("");
@@ -1011,9 +947,9 @@ public class Main_Farmacia extends javax.swing.JFrame {
         pC3 = Double.parseDouble(tf_pcI.getText());
         pV3 = Double.parseDouble(tf_pvI.getText());
         cantida3 = (int) js_cantI.getValue();
-        prod_Infa.add(new Prod_Infantil(tipo3, tf_idI.getText(), tf_nI.getText(), tf_fI.getText(), pC3, pV3, cantida3, true));
+        //prod_Infa.add(new Prod_Infantil(tipo3, tf_idI.getText(), tf_nI.getText(), tf_fI.getText(), pC3, pV3, cantida3, true));
         JOptionPane.showMessageDialog(this, "Se guardó correctamente");
-        System.out.println(prod_Infa);
+        //System.out.println(prod_Infa);
 
         tf_idI.setText("");
         tf_nI.setText("");
@@ -1030,9 +966,9 @@ public class Main_Farmacia extends javax.swing.JFrame {
         pC4 = Double.parseDouble(tf_pcH.getText());
         pV4 = Double.parseDouble(tf_pvH.getText());
         cantida4 = (int) js_cantH.getValue();
-        prod_Hig.add(new Prod_Higiene(tipo4, tf_idH.getText(), tf_nH.getText(), tf_fH.getText(), pC4, pV4, cantida4, true));
+        //prod_Hig.add(new Prod_Higiene(tipo4, tf_idH.getText(), tf_nH.getText(), tf_fH.getText(), pC4, pV4, cantida4, true));
         JOptionPane.showMessageDialog(this, "Se guardó correctamente");
-        System.out.println(prod_Hig);
+        //System.out.println(prod_Hig);
 
         tf_idH.setText("");
         tf_nH.setText("");
@@ -1119,12 +1055,10 @@ public class Main_Farmacia extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
@@ -1141,10 +1075,6 @@ public class Main_Farmacia extends javax.swing.JFrame {
     private javax.swing.JSpinner js_cantH;
     private javax.swing.JSpinner js_cantI;
     private javax.swing.JSpinner js_fCasa;
-    private javax.swing.JRadioButton rb_noFarmac;
-    private javax.swing.JRadioButton rb_noProp;
-    private javax.swing.JRadioButton rb_siFarmac;
-    private javax.swing.JRadioButton rb_siProp;
     private javax.swing.JTextArea ta_direComplet;
     private javax.swing.JTextField tf_fC;
     private javax.swing.JTextField tf_fCosm;
@@ -1181,18 +1111,15 @@ public class Main_Farmacia extends javax.swing.JFrame {
     ArrayList<Prod_FarmaciaCasa> prod_fCasa = new ArrayList();
     int cantida1;
     //ArrayList<Prod_FarmaciaCasa> prod_fCasa2 = new ArrayList();
-
     ArrayList<Prod_Cosmetica> prod__Cosmet = new ArrayList();
     int cantida2;
     //ArrayList<Prod_Cosmetica> prod__Cosmet2 = new ArrayList();
-
     ArrayList<Prod_Higiene> prod_Hig = new ArrayList();
     int cantida4;
     //ArrayList<Prod_Higiene> prod_Hig2 = new ArrayList();
-
     ArrayList<Prod_Infantil> prod_Infa = new ArrayList();
     int cantida3;
     //ArrayList<Prod_Infantil> prod_Infa2 = new ArrayList();
-
     ArrayList<Productos> product = new ArrayList();
+    
 }

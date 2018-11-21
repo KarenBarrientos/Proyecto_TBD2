@@ -14,6 +14,7 @@ public class Productos {
     private String identificación; 
     private String nombre;
     private String fabricante;
+    private String tipo;
     private double precioCosto;
     private double precioVenta;
     private int unidades;
@@ -22,15 +23,26 @@ public class Productos {
     public Productos() {
     }
 
-    public Productos(String identificación, String nombre, String fabricante, double precioCosto, double precioVenta, int unidades, boolean estaProtegido) {
+    public Productos(String identificación, String nombre, String fabricante, String tipo, double precioCosto, double precioVenta, int unidades, boolean estaProtegido) {
         this.identificación = identificación;
         this.nombre = nombre;
         this.fabricante = fabricante;
+        this.tipo = tipo;
         this.precioCosto = precioCosto;
         this.precioVenta = precioVenta;
         this.unidades = unidades;
         this.estaProtegido = estaProtegido;
     }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    
 
     public String getIdentificación() {
         return identificación;
@@ -90,8 +102,10 @@ public class Productos {
 
     @Override
     public String toString() {
-        return "Productos{" + "identificaci\u00f3n=" + identificación + ", nombre=" + nombre + ", fabricante=" + fabricante + ", precioCosto=" + precioCosto + ", precioVenta=" + precioVenta + ", unidades=" + unidades + ", estaProtegido=" + estaProtegido + '}';
+        return "Productos{" + "identificaci\u00f3n=" + identificación + ", nombre=" + nombre + ", fabricante=" + fabricante + ", tipo=" + tipo + ", precioCosto=" + precioCosto + ", precioVenta=" + precioVenta + ", unidades=" + unidades + ", estaProtegido=" + estaProtegido + '}';
     }
+
+    
 
     
 }

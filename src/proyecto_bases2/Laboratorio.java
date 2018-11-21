@@ -14,16 +14,14 @@ import java.util.Date;
  */
 public class Laboratorio {
     private ArrayList<Productos>listaProd = new ArrayList();
-    private ArrayList<Farmacia>listFarma = new ArrayList();
     private Date plazoEntrega;
     private double precioDiferente;
 
     public Laboratorio() {
     }
 
-    public Laboratorio(ArrayList<Productos> listaProd, ArrayList<Farmacia> listFarma, Date plazoEntrega, double precioDiferente) {
+    public Laboratorio(ArrayList<Productos> listaProd, Date plazoEntrega, double precioDiferente) {
         this.listaProd = listaProd;
-        this.listFarma = listFarma;
         this.plazoEntrega = plazoEntrega;
         this.precioDiferente = precioDiferente;
     }
@@ -34,14 +32,6 @@ public class Laboratorio {
 
     public void setListaProd(ArrayList<Productos> listaProd) {
         this.listaProd = listaProd;
-    }
-
-    public ArrayList<Farmacia> getListFarma() {
-        return listFarma;
-    }
-
-    public void setListFarma(ArrayList<Farmacia> listFarma) {
-        this.listFarma = listFarma;
     }
 
     public Date getPlazoEntrega() {
@@ -62,7 +52,7 @@ public class Laboratorio {
 
     @Override
     public String toString() {
-        return "Laboratorio{" + "listaProd=" + listaProd + ", listFarma=" + listFarma + ", plazoEntrega=" + plazoEntrega + ", precioDiferente=" + precioDiferente + '}';
+        return "Laboratorio{" + "listaProd=" + listaProd + ", plazoEntrega=" + plazoEntrega + ", precioDiferente=" + precioDiferente + '}';
     }
     
     

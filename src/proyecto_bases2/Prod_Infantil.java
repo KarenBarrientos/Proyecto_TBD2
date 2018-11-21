@@ -15,6 +15,7 @@ public class Prod_Infantil extends Productos{
     public Prod_Infantil() {
     }
 
+    /*
     public Prod_Infantil(String tipo, String identificación, String nombre, String fabricante, double precioCosto, double precioVenta, int unidades, boolean estaProtegido) {
         super(identificación, nombre, fabricante, precioCosto, precioVenta, unidades, estaProtegido);
         this.tipo = tipo;
@@ -27,6 +28,7 @@ public class Prod_Infantil extends Productos{
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+*/
 
     @Override
     public String toString() {

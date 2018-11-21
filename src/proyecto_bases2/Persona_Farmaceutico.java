@@ -10,29 +10,12 @@ package proyecto_bases2;
  * @author Karen Medina
  */
 public class Persona_Farmaceutico extends Persona{
-    private boolean esResponsable;
 
     public Persona_Farmaceutico() {
     }
 
-    public Persona_Farmaceutico(boolean esResponsable, String nombrePerson, String DNI) {
+    public Persona_Farmaceutico(String nombrePerson, String DNI) {
         super(nombrePerson, DNI);
-        this.esResponsable = esResponsable;
     }
-
-    public boolean isEsResponsable() {
-        return esResponsable;
-    }
-
-    public void setEsResponsable(boolean esResponsable) {
-        this.esResponsable = esResponsable;
-    }
-
-    @Override
-    public String toString() {
-        return " es Responsable= " + esResponsable;
-    }
-    
-    
-    
+       
 }

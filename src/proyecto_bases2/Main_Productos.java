@@ -20,10 +20,10 @@ public class Main_Productos extends javax.swing.JFrame {
      */
     public Main_Productos() {
         initComponents();
-        /*
+        
         Main_Farmacia abrir = new Main_Farmacia();
         abrir.setVisible(true);
-        */
+        
     }
 
     /**
@@ -116,12 +116,31 @@ public class Main_Productos extends javax.swing.JFrame {
         bg_cosmetica = new javax.swing.ButtonGroup();
         bg_higiene = new javax.swing.ButtonGroup();
         bg_infantil = new javax.swing.ButtonGroup();
+        rb_productos = new javax.swing.ButtonGroup();
+        rb_protegido = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        btn_Casa = new javax.swing.JButton();
-        btn_Cosmetica = new javax.swing.JButton();
-        btn_Infantil = new javax.swing.JButton();
-        btn_Higiene = new javax.swing.JButton();
+        btn_AgregarProducto = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        tf_idProd = new javax.swing.JTextField();
+        tf_nProd = new javax.swing.JTextField();
+        tf_fProd = new javax.swing.JTextField();
+        rb_fc = new javax.swing.JRadioButton();
+        rb_C = new javax.swing.JRadioButton();
+        rb_I = new javax.swing.JRadioButton();
+        rb_H = new javax.swing.JRadioButton();
+        jLabel6 = new javax.swing.JLabel();
+        tf_PC = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        tf_PV = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        js_U = new javax.swing.JSpinner();
+        jLabel9 = new javax.swing.JLabel();
+        rb_SiP = new javax.swing.JRadioButton();
+        rb_NoP = new javax.swing.JRadioButton();
 
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -714,69 +733,164 @@ public class Main_Productos extends javax.swing.JFrame {
         jLabel1.setText("Productos");
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        btn_Casa.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btn_Casa.setText("Farmacia casa");
-        btn_Casa.addActionListener(new java.awt.event.ActionListener() {
+        btn_AgregarProducto.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btn_AgregarProducto.setText("Agregar");
+        btn_AgregarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_CasaActionPerformed(evt);
+                btn_AgregarProductoActionPerformed(evt);
             }
         });
 
-        btn_Cosmetica.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btn_Cosmetica.setText("Cosmética");
-        btn_Cosmetica.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_CosmeticaActionPerformed(evt);
-            }
-        });
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel2.setText("ID producto:");
 
-        btn_Infantil.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btn_Infantil.setText("Infantil");
-        btn_Infantil.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_InfantilActionPerformed(evt);
-            }
-        });
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel3.setText("Nombre:");
 
-        btn_Higiene.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btn_Higiene.setText("Higiene");
-        btn_Higiene.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_HigieneActionPerformed(evt);
-            }
-        });
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel4.setText("Fabricante:");
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel5.setText("Tipo:");
+
+        tf_idProd.setEditable(false);
+
+        rb_productos.add(rb_fc);
+        rb_fc.setText("Farmacia_Casa");
+
+        rb_productos.add(rb_C);
+        rb_C.setText("Cosmeticos");
+
+        rb_productos.add(rb_I);
+        rb_I.setText("Infantil");
+
+        rb_productos.add(rb_H);
+        rb_H.setText("Higiene");
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel6.setText("Precio Costo:");
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel7.setText("Precio Venta:");
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel8.setText("Unidades:");
+
+        js_U.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel9.setText("¿Está protegido?");
+
+        rb_protegido.add(rb_SiP);
+        rb_SiP.setText("Si");
+
+        rb_protegido.add(rb_NoP);
+        rb_NoP.setText("No");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(158, 158, 158)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btn_Casa, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_Cosmetica, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_Infantil, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_Higiene, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(144, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(157, 157, 157))
+                .addGap(66, 66, 66)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(18, 18, 18)
+                                .addComponent(tf_fProd))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(tf_idProd, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(92, 92, 92)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tf_nProd, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel8))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(tf_PC, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(57, 57, 57)
+                                        .addComponent(jLabel7)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(tf_PV, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(js_U, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(50, 50, 50)
+                                .addComponent(rb_fc)
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel9)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(rb_SiP)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(rb_NoP))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(rb_C)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(rb_I)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(rb_H)))))
+                        .addGap(0, 48, Short.MAX_VALUE))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(233, 233, 233)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(235, 235, 235)
+                        .addComponent(btn_AgregarProducto)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(20, 20, 20)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(btn_Casa)
-                .addGap(18, 18, 18)
-                .addComponent(btn_Cosmetica)
-                .addGap(18, 18, 18)
-                .addComponent(btn_Infantil)
-                .addGap(18, 18, 18)
-                .addComponent(btn_Higiene)
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addGap(38, 38, 38)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3)
+                    .addComponent(tf_idProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_nProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(tf_fProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(rb_fc)
+                    .addComponent(rb_C)
+                    .addComponent(rb_I)
+                    .addComponent(rb_H))
+                .addGap(24, 24, 24)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(tf_PC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7)
+                    .addComponent(tf_PV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(js_U, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9)
+                    .addComponent(rb_SiP)
+                    .addComponent(rb_NoP))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addComponent(btn_AgregarProducto)
+                .addGap(37, 37, 37))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -799,29 +913,41 @@ public class Main_Productos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_CasaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CasaActionPerformed
-        jd_FarmaciaCasa.pack();
-        //jd_FarmaciaCasa.setModal(true);
-        jd_FarmaciaCasa.setVisible(true);
-    }//GEN-LAST:event_btn_CasaActionPerformed
-
-    private void btn_CosmeticaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CosmeticaActionPerformed
-        jd_Cosmetica.pack();
-        //jd_Cosmetica.setModal(true);
-        jd_Cosmetica.setVisible(true);
-    }//GEN-LAST:event_btn_CosmeticaActionPerformed
-
-    private void btn_InfantilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_InfantilActionPerformed
-        jd_Infantil.pack();
-        //jd_Infantil.setModal(true);
-        jd_Infantil.setVisible(true);
-    }//GEN-LAST:event_btn_InfantilActionPerformed
-
-    private void btn_HigieneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_HigieneActionPerformed
-        jd_Higiene.pack();
-        //jd_Higiene.setModal(true);
-        jd_Higiene.setVisible(true);
-    }//GEN-LAST:event_btn_HigieneActionPerformed
+    private void btn_AgregarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AgregarProductoActionPerformed
+        String idp,nomP,fabricante,tipo="";
+        double precioC,precioV;
+        int unidad;
+        boolean protegido=false;
+        
+        if (rb_fc.isSelected()) {
+            tipo="Farmacia_Casa";
+        }
+        if (rb_C.isSelected()) {
+            tipo="Cosmeticos";
+        }
+        if (rb_I.isSelected()) {
+            tipo="Infantil";
+        }
+        if (rb_H.isSelected()) {
+            tipo="Higiene";
+        }
+        
+        precioC=Double.parseDouble(tf_PC.getText());
+        precioV=Double.parseDouble(tf_PV.getText());
+        
+        unidad = (int) js_U.getValue();
+        
+        if (rb_SiP.isSelected()) {
+            protegido=true;
+        }
+        if (rb_NoP.isSelected()) {
+            protegido=true;
+        }
+        
+        prod.add(new Productos(tf_idProd.getText(),tf_nProd.getText(),tf_fProd.getText(),tipo,precioC,precioV,unidad,protegido));
+        
+        
+    }//GEN-LAST:event_btn_AgregarProductoActionPerformed
 
     private void btn_AgregarFCasaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AgregarFCasaActionPerformed
         String id, nom, fabrica,tip;
@@ -846,12 +972,13 @@ public class Main_Productos extends javax.swing.JFrame {
         }
         
         tip="Farmacia_Casa";
-                
+        
+        /*        
         prod_fCasa.add(new Prod_FarmaciaCasa(tip,id, nom, fabrica, pCoste, pVenta, unid, esta));
         prod.add(new Productos(id, nom, fabrica, pCoste, pVenta, unid, esta));
         System.out.println(prod);
         
-        /*
+        
         DefaultComboBoxModel modelo = new DefaultComboBoxModel();
         
         for (int i = 0; i < prod_fCasa.size(); i++) {
@@ -871,55 +998,6 @@ public class Main_Productos extends javax.swing.JFrame {
         rb_siCasa.setSelected(false);
         js_unidadesCasa.setValue(0);
     }//GEN-LAST:event_btn_AgregarFCasaActionPerformed
-
-    private void btn_AgregarCosmeticaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AgregarCosmeticaActionPerformed
-        String id2, nom2, fabrica2, tip2;
-        double pCoste2, pVenta2;
-        boolean esta2 = false;
-        int unid2;
-
-        id2 = tf_idCosmetica.getText();
-        nom2 = tf_nomCosmetica.getText();
-        fabrica2 = tf_fCosmetica.getText();
-        pCoste2 = Double.parseDouble(tf_pcCosmetica.getText());
-        pVenta2 = Double.parseDouble(tf_pvCosmetica.getText());
-        unid2 = (int) js_unidCosmetica.getValue();
-
-        if (rb_siCosmetica.isSelected()) {
-            esta2 = true;
-            rb_noCosmetica.setVisible(false);
-        }
-        if (rb_noCosmetica.isSelected()) {
-            esta2 = true;
-            rb_siCosmetica.setVisible(false);
-        }
-        
-        tip2="Cosmetica";
-        
-        prod__Cosmet.add(new Prod_Cosmetica(tip2, id2, nom2, fabrica2, pCoste2, pVenta2, unid2, esta2));
-        prod.add(new Productos(id2, nom2, fabrica2, pCoste2, pVenta2, unid2, esta2));
-        System.out.println(prod);
-        
-        /*
-        DefaultComboBoxModel modelo2 = new DefaultComboBoxModel();
-        
-        for (int i = 0; i < prod__Cosmet.size(); i++) {
-            modelo2.addElement(prod__Cosmet.get(i).getNombre());
-        }
-        Main_Farmacia.cb_pC.setModel(modelo2);
-        */
-        
-        JOptionPane.showMessageDialog(this, "Se agregó");
-
-        tf_idCosmetica.setText("");
-        tf_nomCosmetica.setText("");
-        tf_fCosmetica.setText("");
-        tf_pcCosmetica.setText("");
-        tf_pvCosmetica.setText("");
-        rb_noCosmetica.setSelected(true);
-        rb_siCosmetica.setSelected(false);
-        js_unidCosmetica.setValue(0);
-    }//GEN-LAST:event_btn_AgregarCosmeticaActionPerformed
 
     private void btn_agregarHigieneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregarHigieneActionPerformed
         String id3, nom3, fabrica3, tip3;
@@ -945,11 +1023,12 @@ public class Main_Productos extends javax.swing.JFrame {
 
         tip3="Higiene";
         
+        /*
         prod_Hig.add(new Prod_Higiene(tip3, id3, nom3, fabrica3, pCoste3, pVenta3, unid3, esta3));
         prod.add(new Productos(id3, nom3, fabrica3, pCoste3, pVenta3, unid3, esta3));
         System.out.println(prod);
         
-        /*
+        
         DefaultComboBoxModel modelo3 = new DefaultComboBoxModel();
         
         for (int i = 0; i < prod_Hig.size(); i++) {
@@ -991,13 +1070,14 @@ public class Main_Productos extends javax.swing.JFrame {
             esta4 = true;
             rb_siInfantil.setVisible(false);
         }
-
+    
+        /*
         tip4="Infantil";
         prod_Infa.add(new Prod_Infantil(tip4, id4, nom4, fabrica4, pCoste4, pVenta4, unid4, esta4));
         prod.add(new Productos(id4, nom4, fabrica4, pCoste4, pVenta4, unid4, esta4));
         System.out.println(prod);
         
-        /*
+        
         DefaultComboBoxModel modelo4 = new DefaultComboBoxModel();
         
         for (int i = 0; i < prod_Infa.size(); i++) {
@@ -1017,6 +1097,55 @@ public class Main_Productos extends javax.swing.JFrame {
         rb_siInfantil.setSelected(false);
         js_unidInfantil.setValue(0);
     }//GEN-LAST:event_btn_agregarInfantilActionPerformed
+
+    private void btn_AgregarCosmeticaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AgregarCosmeticaActionPerformed
+        String id2, nom2, fabrica2, tip2;
+        double pCoste2, pVenta2;
+        boolean esta2 = false;
+        int unid2;
+
+        id2 = tf_idCosmetica.getText();
+        nom2 = tf_nomCosmetica.getText();
+        fabrica2 = tf_fCosmetica.getText();
+        pCoste2 = Double.parseDouble(tf_pcCosmetica.getText());
+        pVenta2 = Double.parseDouble(tf_pvCosmetica.getText());
+        unid2 = (int) js_unidCosmetica.getValue();
+
+        if (rb_siCosmetica.isSelected()) {
+            esta2 = true;
+            rb_noCosmetica.setVisible(false);
+        }
+        if (rb_noCosmetica.isSelected()) {
+            esta2 = true;
+            rb_siCosmetica.setVisible(false);
+        }
+
+        tip2="Cosmetica";
+        /*
+        prod__Cosmet.add(new Prod_Cosmetica(tip2, id2, nom2, fabrica2, pCoste2, pVenta2, unid2, esta2));
+        prod.add(new Productos(id2, nom2, fabrica2, pCoste2, pVenta2, unid2, esta2));
+        System.out.println(prod);
+
+        
+        DefaultComboBoxModel modelo2 = new DefaultComboBoxModel();
+
+        for (int i = 0; i < prod__Cosmet.size(); i++) {
+            modelo2.addElement(prod__Cosmet.get(i).getNombre());
+        }
+        Main_Farmacia.cb_pC.setModel(modelo2);
+        */
+
+        JOptionPane.showMessageDialog(this, "Se agregó");
+
+        tf_idCosmetica.setText("");
+        tf_nomCosmetica.setText("");
+        tf_fCosmetica.setText("");
+        tf_pcCosmetica.setText("");
+        tf_pvCosmetica.setText("");
+        rb_noCosmetica.setSelected(true);
+        rb_siCosmetica.setSelected(false);
+        js_unidCosmetica.setValue(0);
+    }//GEN-LAST:event_btn_AgregarCosmeticaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1061,10 +1190,7 @@ public class Main_Productos extends javax.swing.JFrame {
     private javax.swing.ButtonGroup bg_protegido;
     private javax.swing.JButton btn_AgregarCosmetica;
     private javax.swing.JButton btn_AgregarFCasa;
-    private javax.swing.JButton btn_Casa;
-    private javax.swing.JButton btn_Cosmetica;
-    private javax.swing.JButton btn_Higiene;
-    private javax.swing.JButton btn_Infantil;
+    private javax.swing.JButton btn_AgregarProducto;
     private javax.swing.JButton btn_agregarHigiene;
     private javax.swing.JButton btn_agregarInfantil;
     private javax.swing.JLabel jLabel1;
@@ -1078,6 +1204,7 @@ public class Main_Productos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -1088,6 +1215,7 @@ public class Main_Productos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
@@ -1098,8 +1226,14 @@ public class Main_Productos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1109,26 +1243,40 @@ public class Main_Productos extends javax.swing.JFrame {
     private javax.swing.JDialog jd_FarmaciaCasa;
     private javax.swing.JDialog jd_Higiene;
     private javax.swing.JDialog jd_Infantil;
+    private javax.swing.JSpinner js_U;
     private javax.swing.JRadioButton js_noInfantil;
     private javax.swing.JSpinner js_unidCosmetica;
     private javax.swing.JSpinner js_unidHigiene;
     private javax.swing.JSpinner js_unidInfantil;
     private javax.swing.JSpinner js_unidadesCasa;
+    private javax.swing.JRadioButton rb_C;
+    private javax.swing.JRadioButton rb_H;
+    private javax.swing.JRadioButton rb_I;
+    private javax.swing.JRadioButton rb_NoP;
+    private javax.swing.JRadioButton rb_SiP;
+    private javax.swing.JRadioButton rb_fc;
     private javax.swing.JRadioButton rb_noCasa;
     private javax.swing.JRadioButton rb_noCosmetica;
     private javax.swing.JRadioButton rb_noHigiene;
+    private javax.swing.ButtonGroup rb_productos;
+    private javax.swing.ButtonGroup rb_protegido;
     private javax.swing.JRadioButton rb_siCasa;
     private javax.swing.JRadioButton rb_siCosmetica;
     private javax.swing.JRadioButton rb_siHigiene;
     private javax.swing.JRadioButton rb_siInfantil;
+    private javax.swing.JTextField tf_PC;
+    private javax.swing.JTextField tf_PV;
     private javax.swing.JTextField tf_fCosmetica;
     private javax.swing.JTextField tf_fHigiene;
     private javax.swing.JTextField tf_fInfantil;
+    private javax.swing.JTextField tf_fProd;
     private javax.swing.JTextField tf_fabricanteCasa;
     private javax.swing.JTextField tf_idCosmetica;
     private javax.swing.JTextField tf_idHigiene;
     private javax.swing.JTextField tf_idInfantil;
+    private javax.swing.JTextField tf_idProd;
     private javax.swing.JTextField tf_identificaCasa;
+    private javax.swing.JTextField tf_nProd;
     private javax.swing.JTextField tf_nomCosmetica;
     private javax.swing.JTextField tf_nomHigiene;
     private javax.swing.JTextField tf_nomInfantil;
@@ -1144,9 +1292,11 @@ public class Main_Productos extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     ArrayList<Productos> prod = new ArrayList();
+    
+    /*
     public ArrayList<Prod_FarmaciaCasa>prod_fCasa = new ArrayList();
     public ArrayList<Prod_Cosmetica> prod__Cosmet = new ArrayList();
     ArrayList<Prod_Higiene> prod_Hig = new ArrayList();
     ArrayList<Prod_Infantil> prod_Infa = new ArrayList();
-
+    */
 }
