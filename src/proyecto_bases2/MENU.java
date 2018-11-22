@@ -131,8 +131,6 @@ public class MENU extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel2.setText("ID producto:");
 
-        tf_idProd.setEditable(false);
-
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel3.setText("Nombre:");
 
@@ -307,8 +305,6 @@ public class MENU extends javax.swing.JFrame {
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel11.setText("Dirección Completa:");
-
-        tF_IDF.setEditable(false);
 
         ta_DireccionF.setColumns(20);
         ta_DireccionF.setRows(5);
@@ -580,6 +576,8 @@ public class MENU extends javax.swing.JFrame {
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel19.setText("ID Producto:");
+
+        tf_idC.setEditable(false);
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel20.setText("Nombre:");
@@ -956,7 +954,7 @@ public class MENU extends javax.swing.JFrame {
         if (rb_NoP.isSelected()) {
             protegido = true;
         }
-
+        
         prod.add(new Productos(tf_idProd.getText(), tf_nProd.getText(), tf_fProd.getText(), tipo, precioC, precioV, unidad, protegido));
         System.out.println(prod);
 
