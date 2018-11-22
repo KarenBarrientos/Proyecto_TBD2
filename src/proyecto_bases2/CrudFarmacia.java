@@ -35,7 +35,7 @@ public class CrudFarmacia {
 
     public static void IniciarConexion() {
         try {
-            cluster = connect("127.0.0.1");
+            cluster = connect("192.168.0.3");
         } catch (NoHostAvailableException e) {
             throw new RuntimeException(e);
 

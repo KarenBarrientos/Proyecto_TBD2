@@ -111,7 +111,7 @@ public class CrudLaboratorio {
     public void create_Laboratorio(String id, String plazo_entrega, ArrayList<Productos> productos) {
 
         try {
-            String ruta = "/home/jeanwahlung/Documents/Proyecto_TBD2-master/" + id + "lab" + ".txt";
+            String ruta = "C:\\Users\\karen\\Documents\\NetBeansProjects\\Proyecto_TBD" + id + "lab" + ".txt";
             String contenido = "";
             File file = new File(ruta);
             // Si el archivo no existe es creado
@@ -162,7 +162,7 @@ public class CrudLaboratorio {
                 prod.add(p);
             }
         try {
-            String ruta = "/home/jeanwahlung/Documents/Proyecto_TBD2-master/" + id + "lab" + ".txt";
+            String ruta = "C:\\Users\\karen\\Documents\\NetBeansProjects\\Proyecto_TBD" + id + "lab" + ".txt";
             String contenido = "";
             File file = new File(ruta);
             // Si el archivo no existe es creado
@@ -204,7 +204,7 @@ public class CrudLaboratorio {
     }
 
     public ArrayList<Productos> readp(String id) throws IOException {
-        BufferedReader br = new BufferedReader(new FileReader("/home/jeanwahlung/Documents/Proyecto_TBD2-master/" + id + ".txt"));
+        BufferedReader br = new BufferedReader(new FileReader("/C:\\Users\\karen\\Documents\\NetBeansProjects\\Proyecto_TBD" + id + ".txt"));
         prod.clear();
         try {
             StringBuilder sb = new StringBuilder();

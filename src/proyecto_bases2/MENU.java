@@ -60,7 +60,6 @@ public class MENU extends javax.swing.JFrame {
         rb_SiP = new javax.swing.JRadioButton();
         rb_NoP = new javax.swing.JRadioButton();
         btn_AgregarProducto = new javax.swing.JButton();
-        btn_ModificarProducto = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -117,12 +116,13 @@ public class MENU extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         btn_vender = new javax.swing.JButton();
+        tf_precioVenta = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jLabel27 = new javax.swing.JLabel();
+        tf_pagar = new javax.swing.JTextField();
         panel_principal = new javax.swing.JPanel();
         btn_CREAR = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
         btn_LABORATORIO = new javax.swing.JButton();
 
         jd_crear.setTitle("CREAR");
@@ -183,13 +183,6 @@ public class MENU extends javax.swing.JFrame {
         btn_AgregarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_AgregarProductoActionPerformed(evt);
-            }
-        });
-
-        btn_ModificarProducto.setText("Modificar");
-        btn_ModificarProducto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_ModificarProductoActionPerformed(evt);
             }
         });
 
@@ -254,10 +247,8 @@ public class MENU extends javax.swing.JFrame {
                         .addGap(233, 233, 233)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(178, 178, 178)
-                        .addComponent(btn_AgregarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37)
-                        .addComponent(btn_ModificarProducto)))
+                        .addGap(225, 225, 225)
+                        .addComponent(btn_AgregarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -295,11 +286,9 @@ public class MENU extends javax.swing.JFrame {
                     .addComponent(jLabel9)
                     .addComponent(rb_SiP)
                     .addComponent(rb_NoP))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_AgregarProducto)
-                    .addComponent(btn_ModificarProducto))
-                .addGap(55, 55, 55))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addComponent(btn_AgregarProducto)
+                .addGap(52, 52, 52))
         );
 
         jTabbedPane1.addTab("Crear Producto", jPanel1);
@@ -606,7 +595,7 @@ public class MENU extends javax.swing.JFrame {
         jLabel22.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel22.setText("Unidades:");
 
-        js_unidadess.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        js_unidadess.setModel(new javax.swing.SpinnerNumberModel());
 
         jLabel24.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel24.setText("¿Está protegido?");
@@ -746,16 +735,16 @@ public class MENU extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_pedidosLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btn_EnviarPedido)
-                .addGap(251, 251, 251))
+                .addGap(254, 254, 254))
         );
         jd_pedidosLayout.setVerticalGroup(
             jd_pedidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_pedidosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                .addComponent(btn_EnviarPedido)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btn_EnviarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -785,28 +774,60 @@ public class MENU extends javax.swing.JFrame {
 
         btn_vender.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btn_vender.setText("Vender");
+        btn_vender.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_venderActionPerformed(evt);
+            }
+        });
+
+        jLabel26.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel26.setText("Precio Venta:");
+
+        jLabel27.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel27.setText("Fecha Entrega:");
 
         javax.swing.GroupLayout jd_laboratorioLayout = new javax.swing.GroupLayout(jd_laboratorio.getContentPane());
         jd_laboratorio.getContentPane().setLayout(jd_laboratorioLayout);
         jd_laboratorioLayout.setHorizontalGroup(
             jd_laboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_laboratorioLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 519, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(jd_laboratorioLayout.createSequentialGroup()
-                .addGap(226, 226, 226)
-                .addComponent(btn_vender)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jd_laboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_laboratorioLayout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addGroup(jd_laboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jd_laboratorioLayout.createSequentialGroup()
+                                .addComponent(jLabel26)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jd_laboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(tf_pagar, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+                                    .addComponent(tf_precioVenta))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel27)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jd_laboratorioLayout.createSequentialGroup()
+                        .addGap(228, 228, 228)
+                        .addComponent(btn_vender)))
+                .addContainerGap(84, Short.MAX_VALUE))
         );
         jd_laboratorioLayout.setVerticalGroup(
             jd_laboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_laboratorioLayout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
+                .addGap(29, 29, 29)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jd_laboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_laboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(tf_precioVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel26)
+                        .addComponent(jLabel27))
+                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addComponent(tf_pagar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addComponent(btn_vender)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addGap(40, 40, 40))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -818,18 +839,6 @@ public class MENU extends javax.swing.JFrame {
                 btn_CREARActionPerformed(evt);
             }
         });
-
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton2.setText("RESOLUCIÓN 1");
-
-        jButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton3.setText("RESOLUCIÓN 2");
-
-        jButton4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton4.setText("RESOLUCIÓN 3");
-
-        jButton5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton5.setText("RESOLUCIÓN 4");
 
         btn_LABORATORIO.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btn_LABORATORIO.setText("LABORATORIO");
@@ -844,34 +853,20 @@ public class MENU extends javax.swing.JFrame {
         panel_principalLayout.setHorizontalGroup(
             panel_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_principalLayout.createSequentialGroup()
-                .addGap(92, 92, 92)
-                .addGroup(panel_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_CREAR, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4)
-                    .addComponent(jButton2))
-                .addGap(33, 33, 33)
-                .addGroup(panel_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_LABORATORIO, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addGap(80, 80, 80)
+                .addComponent(btn_CREAR, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addComponent(btn_LABORATORIO, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(76, Short.MAX_VALUE))
         );
         panel_principalLayout.setVerticalGroup(
             panel_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_principalLayout.createSequentialGroup()
-                .addGap(82, 82, 82)
+                .addGap(147, 147, 147)
                 .addGroup(panel_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_CREAR)
                     .addComponent(btn_LABORATORIO))
-                .addGap(49, 49, 49)
-                .addGroup(panel_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton2))
-                .addGap(43, 43, 43)
-                .addGroup(panel_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton5)
-                    .addComponent(jButton4))
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addContainerGap(176, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -899,9 +894,8 @@ public class MENU extends javax.swing.JFrame {
         String numID, direc;
         numID = tF_IDF.getText();
         direc = ta_DireccionF.getText();
-        
-        CrudFarmacia.create_farmacia(numID, direc, people, prod);
 
+        //CrudFarmacia.create_farmacia(numID, direc, people, prod);
         listFarmacia.add(new Farmacia(numID, direc, listProp, listFarmaceutico));
         System.out.println(listFarmacia);
 
@@ -929,9 +923,9 @@ public class MENU extends javax.swing.JFrame {
 
         id = tf_idPropietario.getText();
         nombr = tf_nomPropietario.getText();
-        
+
         people.add(new Persona(nombr, id));
-        
+
         listProp.add(new Persona_Propietario(nombr, id));
         JOptionPane.showMessageDialog(this, "Se agregó el Propietario");
 
@@ -969,7 +963,7 @@ public class MENU extends javax.swing.JFrame {
         if (rb_NoP.isSelected()) {
             protegido = true;
         }
-        
+
         pro = new Productos(tf_idProd.getText(), tf_nProd.getText(), tf_fProd.getText(), tipo, precioC, precioV, unidad, protegido);
         prod.add(new Productos(tf_idProd.getText(), tf_nProd.getText(), tf_fProd.getText(), tipo, precioC, precioV, unidad, protegido));
         System.out.println(prod);
@@ -990,84 +984,20 @@ public class MENU extends javax.swing.JFrame {
         js_U.setValue(0);
     }//GEN-LAST:event_btn_AgregarProductoActionPerformed
 
-    private void btn_ModificarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModificarProductoActionPerformed
-        String idp, nomP, fabricante, tipo = "";
-        double precioC, precioV;
-        int unidad;
-        boolean protegido = false;
-
-        idp = tf_idProd.getText();
-        nomP = tf_nProd.getText();
-        fabricante = tf_fProd.getText();
-
-        if (rb_fc.isSelected()) {
-            tipo = "Farmacia_Casa";
-        }
-        if (rb_C.isSelected()) {
-            tipo = "Cosmeticos";
-        }
-        if (rb_I.isSelected()) {
-            tipo = "Infantil";
-        }
-        if (rb_H.isSelected()) {
-            tipo = "Higiene";
-        }
-
-        precioC = Double.parseDouble(tf_PC.getText());
-        precioV = Double.parseDouble(tf_PV.getText());
-
-        unidad = (int) js_U.getValue();
-
-        if (rb_SiP.isSelected()) {
-            protegido = true;
-        }
-        if (rb_NoP.isSelected()) {
-            protegido = true;
-        }
-        
-        
-        /*
-        ((Productos) prod.get(cb_productos.getSelectedIndex())).setIdentificación(idp);
-        ((Productos) prod.get(cb_productos.getSelectedIndex())).setNombre(nomP);
-        ((Productos) prod.get(cb_productos.getSelectedIndex())).setFabricante(fabricante);
-        ((Productos) prod.get(cb_productos.getSelectedIndex())).setPrecioCosto(precioC);
-        ((Productos) prod.get(cb_productos.getSelectedIndex())).setPrecioVenta(precioV);
-        ((Productos) prod.get(cb_productos.getSelectedIndex())).setTipo(tipo);
-        ((Productos) prod.get(cb_productos.getSelectedIndex())).setUnidades(unidad);
-        ((Productos) prod.get(cb_productos.getSelectedIndex())).setEstaProtegido(protegido);
-         */
-        //prod.set(cb_productos.getSelectedIndex(), new Productos(tf_idProd.getText(), tf_nProd.getText(), tf_fProd.getText(), tipo, precioC, precioV, unidad, protegido));
-        //System.out.println(prod);
-        JOptionPane.showMessageDialog(this, "Se modificó éxitosamente el Producto");
-
-        tf_idProd.setText("");
-        tf_nProd.setText("");
-        tf_fProd.setText("");
-        rb_SiP.setSelected(true);
-        rb_NoP.setSelected(false);
-        rb_fc.setSelected(true);
-        rb_C.setSelected(false);
-        rb_I.setSelected(false);
-        rb_H.setSelected(false);
-        tf_PC.setText("");
-        tf_PV.setText("");
-        js_U.setValue(0);
-
-    }//GEN-LAST:event_btn_ModificarProductoActionPerformed
-
     private void btn_ModificarFarmaciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModificarFarmaciaActionPerformed
         String numID, direc;
         numID = tF_IDF.getText();
         direc = ta_DireccionF.getText();
-
+        /*
         try {
-            CrudFarmacia.update_farmacia(numID, direc,pro);
+            CrudFarmacia.update_farmacia(numID, direc, pro);
         } catch (IOException ex) {
             Logger.getLogger(MENU.class.getName()).log(Level.SEVERE, null, ex);
         }
+         */
         //listFarmacia.set(cb_farmacia.getSelectedIndex(), new Farmacia(numID, direc, listProp, listFarmaceutico));
         System.out.println(listFarmacia);
-        
+
         JOptionPane.showMessageDialog(this, "Se modificó la Farmacia");
 
         tF_IDF.setText("");
@@ -1102,25 +1032,23 @@ public class MENU extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_Modificar_FarmaceuticoActionPerformed
 
     private void btn_CrearPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CrearPedidoActionPerformed
-        jd_pedidos.setModal(true);
+        //jd_pedidos.setModal(true);
         jd_pedidos.pack();
         jd_pedidos.setLocationRelativeTo(jd_pedidos);
         jd_pedidos.setVisible(true);
     }//GEN-LAST:event_btn_CrearPedidoActionPerformed
 
     private void btn_GuardarPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_GuardarPedidosActionPerformed
-        String tipo="", id;
+        String tipo = "", id;
         double pc, pv;
-        int cantida;
-        boolean protegido=false;
-        id=tf_idC.getText();
-        
-        
-        
+
+        boolean protegido = false;
+        id = tf_idC.getText();
+
         pc = 0.0;
         pv = 0.0;
-        cantida = (int) js_unidadess.getValue();
-        
+        cantida1 = (int) js_unidadess.getValue();
+
         if (rb_fc.isSelected()) {
             tipo = "Farmacia_Casa";
         }
@@ -1133,7 +1061,7 @@ public class MENU extends javax.swing.JFrame {
         if (rb_H.isSelected()) {
             tipo = "Higiene";
         }
-        
+
         if (rb_pSi.isSelected()) {
             protegido = true;
         }
@@ -1141,7 +1069,8 @@ public class MENU extends javax.swing.JFrame {
             protegido = true;
         }
 
-        prod.add(new Productos(id, tf_nC.getText(), tf_fC.getText(),tipo, pc, pv, cantida, protegido));
+        prod.add(new Productos(id, tf_nC.getText(), tf_fC.getText(), tipo, pc, pv, cantida1, protegido));
+
         JOptionPane.showMessageDialog(this, "Se guardó correctamente");
         System.out.println(prod);
 
@@ -1152,15 +1081,13 @@ public class MENU extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_GuardarPedidosActionPerformed
 
     private void btn_EnviarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EnviarPedidoActionPerformed
-        int cantida1;
-        cantida1 = (int) js_unidadess.getValue();
-        ped.add(new Pedido(prod,cantida1));
+        ped.add(new Pedido(prod, cantida1));
         System.out.println(ped);
         JOptionPane.showMessageDialog(this, "Se está procesando...");
 
         try {
             // agregar a la tabla
-            DefaultTableModel mod, mod1, mod2, mod3;
+            DefaultTableModel mod;
             mod = (DefaultTableModel) jTable1.getModel();
             Object[] newrow = new Object[mod.getColumnCount()];
             for (int i = 0; i < ped.size(); i++) {
@@ -1172,7 +1099,7 @@ public class MENU extends javax.swing.JFrame {
 
         } catch (Exception e) {
         }
-        
+
     }//GEN-LAST:event_btn_EnviarPedidoActionPerformed
 
     private void btn_LABORATORIOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LABORATORIOActionPerformed
@@ -1181,6 +1108,44 @@ public class MENU extends javax.swing.JFrame {
         jd_laboratorio.setLocationRelativeTo(jd_pedidos);
         jd_laboratorio.setVisible(true);
     }//GEN-LAST:event_btn_LABORATORIOActionPerformed
+
+    private void btn_venderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_venderActionPerformed
+        DefaultTableModel mode;
+        int filaSelec = jTable1.getSelectedRow();
+
+        try {
+            String categoria, nombre, precio, cant, importe;
+            double calcula = 0.0, x = 0.0;
+            int cantidad = 0;
+
+            if (filaSelec == 4) {
+                JOptionPane.showMessageDialog(this, "Debe seleccionar un producto", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            } else {
+                mode = (DefaultTableModel) jTable1.getModel();
+                categoria = jTable1.getValueAt(filaSelec, 0).toString();
+                nombre = jTable1.getValueAt(filaSelec, 1).toString();
+                cant = jTable1.getValueAt(filaSelec, 2).toString();
+
+                precio = tf_precioVenta.getText();
+                // hacer los calculos
+                x = (Integer.parseInt(cant)) * Double.parseDouble(precio);
+                importe = String.valueOf(x);
+
+                calcula = (Double.parseDouble(importe));
+                precioV = precioV + calcula;
+
+                total = total + precioV;
+
+                tf_pagar.setText("" + total);
+
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Verificar selección del producto", "Error", JOptionPane.ERROR_MESSAGE);
+
+        }
+
+    }//GEN-LAST:event_btn_venderActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1231,15 +1196,11 @@ public class MENU extends javax.swing.JFrame {
     private javax.swing.JButton btn_GuardarPedidos;
     private javax.swing.JButton btn_LABORATORIO;
     private javax.swing.JButton btn_ModificarFarmacia;
-    private javax.swing.JButton btn_ModificarProducto;
     private javax.swing.JButton btn_Modificar_Farmaceutico;
     private javax.swing.JButton btn_Modificar_Propietario;
     private javax.swing.JButton btn_agregarPropietario;
     private javax.swing.JButton btn_vender;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1258,6 +1219,8 @@ public class MENU extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1307,6 +1270,8 @@ public class MENU extends javax.swing.JFrame {
     private javax.swing.JTextField tf_nProd;
     private javax.swing.JTextField tf_nomFarmaceutico;
     private javax.swing.JTextField tf_nomPropietario;
+    private javax.swing.JTextField tf_pagar;
+    private javax.swing.JTextField tf_precioVenta;
     // End of variables declaration//GEN-END:variables
 
     ArrayList<Productos> prod = new ArrayList();
@@ -1316,5 +1281,8 @@ public class MENU extends javax.swing.JFrame {
     ArrayList<Farmacia> listFarmacia = new ArrayList();
     ArrayList<Pedido> ped = new ArrayList();
     ArrayList<Persona> people = new ArrayList();
+
+    int cantida1;
+    double subtotal = 0, total = 0, precioV = 0;
 
 }
