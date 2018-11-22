@@ -956,9 +956,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tf_idC">
-              <Properties>
-                <Property name="editable" type="boolean" value="false"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel20">
               <Properties>

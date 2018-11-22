@@ -5,7 +5,10 @@
  */
 package proyecto_bases2;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -577,8 +580,6 @@ public class MENU extends javax.swing.JFrame {
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel19.setText("ID Producto:");
 
-        tf_idC.setEditable(false);
-
         jLabel20.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel20.setText("Nombre:");
 
@@ -888,6 +889,8 @@ public class MENU extends javax.swing.JFrame {
         String numID, direc;
         numID = tF_IDF.getText();
         direc = ta_DireccionF.getText();
+        
+        CrudFarmacia.create_farmacia(numID, direc, people, prod);
 
         listFarmacia.add(new Farmacia(numID, direc, listProp, listFarmaceutico));
         System.out.println(listFarmacia);
@@ -903,7 +906,7 @@ public class MENU extends javax.swing.JFrame {
 
         id2 = tf_idFarmaceutico.getText();
         nombr2 = tf_nomFarmaceutico.getText();
-
+        people.add(new Persona(nombr2, id2));
         listFarmaceutico.add(new Persona_Farmaceutico(nombr2, id2));
         JOptionPane.showMessageDialog(this, "Se agregó el Farmaceutico");
 
@@ -916,7 +919,9 @@ public class MENU extends javax.swing.JFrame {
 
         id = tf_idPropietario.getText();
         nombr = tf_nomPropietario.getText();
-
+        
+        people.add(new Persona(nombr, id));
+        
         listProp.add(new Persona_Propietario(nombr, id));
         JOptionPane.showMessageDialog(this, "Se agregó el Propietario");
 
@@ -955,6 +960,7 @@ public class MENU extends javax.swing.JFrame {
             protegido = true;
         }
         
+        pro = new Productos(tf_idProd.getText(), tf_nProd.getText(), tf_fProd.getText(), tipo, precioC, precioV, unidad, protegido);
         prod.add(new Productos(tf_idProd.getText(), tf_nProd.getText(), tf_fProd.getText(), tipo, precioC, precioV, unidad, protegido));
         System.out.println(prod);
 
@@ -1008,7 +1014,8 @@ public class MENU extends javax.swing.JFrame {
         if (rb_NoP.isSelected()) {
             protegido = true;
         }
-
+        
+        
         /*
         ((Productos) prod.get(cb_productos.getSelectedIndex())).setIdentificación(idp);
         ((Productos) prod.get(cb_productos.getSelectedIndex())).setNombre(nomP);
@@ -1043,9 +1050,14 @@ public class MENU extends javax.swing.JFrame {
         numID = tF_IDF.getText();
         direc = ta_DireccionF.getText();
 
+        try {
+            CrudFarmacia.update_farmacia(numID, direc,pro);
+        } catch (IOException ex) {
+            Logger.getLogger(MENU.class.getName()).log(Level.SEVERE, null, ex);
+        }
         //listFarmacia.set(cb_farmacia.getSelectedIndex(), new Farmacia(numID, direc, listProp, listFarmaceutico));
         System.out.println(listFarmacia);
-
+        
         JOptionPane.showMessageDialog(this, "Se modificó la Farmacia");
 
         tF_IDF.setText("");
@@ -1059,7 +1071,7 @@ public class MENU extends javax.swing.JFrame {
         id = tf_idPropietario.getText();
         nombr = tf_nomPropietario.getText();
 
-        //listProp.add(new Persona_Propietario(nombr, id));
+        //people.add(new Persona(nombr, id));
         JOptionPane.showMessageDialog(this, "Se modificó el Propietario");
 
         tf_idPropietario.setText("");
@@ -1087,12 +1099,16 @@ public class MENU extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_CrearPedidoActionPerformed
 
     private void btn_GuardarPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_GuardarPedidosActionPerformed
-        String tipo="";
+        String tipo="", id;
         double pc, pv;
         int cantida;
         boolean protegido=false;
-        pc = Double.parseDouble(tf_PC.getText());
-        pv = Double.parseDouble(tf_PV.getText());
+        id=tf_idC.getText();
+        
+        
+        
+        pc = 0.0;
+        pv = 0.0;
         cantida = (int) js_unidadess.getValue();
         
         if (rb_fc.isSelected()) {
@@ -1115,7 +1131,7 @@ public class MENU extends javax.swing.JFrame {
             protegido = true;
         }
 
-        prod.add(new Productos(tf_idC.getText(), tf_nC.getText(), tf_fC.getText(),tipo, pc, pv, cantida, protegido));
+        prod.add(new Productos(id, tf_nC.getText(), tf_fC.getText(),tipo, pc, pv, cantida, protegido));
         JOptionPane.showMessageDialog(this, "Se guardó correctamente");
         System.out.println(prod);
 
@@ -1135,7 +1151,7 @@ public class MENU extends javax.swing.JFrame {
         try {
             // agregar a la tabla
             DefaultTableModel mod, mod1, mod2, mod3;
-            mod = (DefaultTableModel) Main_Laboratorio.jTable1.getModel();
+            mod = (DefaultTableModel) jTable1.getModel();
             Object[] newrow = new Object[mod.getColumnCount()];
             for (int i = 0; i < ped.size(); i++) {
                 newrow[0] = ped.get(i).getListProductoss().get(i).getTipo();
@@ -1283,9 +1299,11 @@ public class MENU extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     ArrayList<Productos> prod = new ArrayList();
+    Productos pro = new Productos();
     ArrayList<Persona_Propietario> listProp = new ArrayList();
     ArrayList<Persona_Farmaceutico> listFarmaceutico = new ArrayList();
     ArrayList<Farmacia> listFarmacia = new ArrayList();
     ArrayList<Pedido> ped = new ArrayList();
+    ArrayList<Persona> people = new ArrayList();
 
 }
