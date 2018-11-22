@@ -869,10 +869,10 @@ public class Main_Farmacia extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_GuardarFCasaActionPerformed
 
     private void btn_PedirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_PedirActionPerformed
-        ped.add(new Pedido(prod_fCasa, cantida1, prod__Cosmet, cantida2, prod_Infa, cantida3, prod_Hig, cantida4));
+       /* ped.add(new Pedido(prod_fCasa, cantida1, prod__Cosmet, cantida2, prod_Infa, cantida3, prod_Hig, cantida4));
         System.out.println(ped);
         JOptionPane.showMessageDialog(this, "Se está procesando...");
-        /*
+        
         try {
             // agregar a la tabla
             DefaultTableModel mod, mod1, mod2, mod3;

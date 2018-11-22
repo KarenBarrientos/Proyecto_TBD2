@@ -8,6 +8,7 @@ package proyecto_bases2;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -56,7 +57,6 @@ public class MENU extends javax.swing.JFrame {
         rb_SiP = new javax.swing.JRadioButton();
         rb_NoP = new javax.swing.JRadioButton();
         btn_AgregarProducto = new javax.swing.JButton();
-        cb_productos = new javax.swing.JComboBox<>();
         btn_ModificarProducto = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
@@ -82,32 +82,56 @@ public class MENU extends javax.swing.JFrame {
         btn_AgregarFarmaceutico = new javax.swing.JButton();
         btn_Modificar_Farmaceutico = new javax.swing.JButton();
         btn_AgregarFarmacia = new javax.swing.JButton();
-        cb_farmacia = new javax.swing.JComboBox<>();
         btn_ModificarFarmacia = new javax.swing.JButton();
+        btn_CrearPedido = new javax.swing.JButton();
         bg_protegido = new javax.swing.ButtonGroup();
         bg_tipo = new javax.swing.ButtonGroup();
         jd_pedidos = new javax.swing.JDialog();
+        jPanel3 = new javax.swing.JPanel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        tf_idC = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        tf_nC = new javax.swing.JTextField();
+        jRadioButton4 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        tf_fC = new javax.swing.JTextField();
+        jLabel22 = new javax.swing.JLabel();
+        js_unidadess = new javax.swing.JSpinner();
+        jLabel24 = new javax.swing.JLabel();
+        rb_pSi = new javax.swing.JRadioButton();
+        rb_pNo = new javax.swing.JRadioButton();
+        btn_GuardarPedidos = new javax.swing.JButton();
+        btn_EnviarPedido = new javax.swing.JButton();
+        bg_tipoPedido = new javax.swing.ButtonGroup();
+        bg_protegidoPedido = new javax.swing.ButtonGroup();
+        jd_laboratorio = new javax.swing.JDialog();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jTextField1 = new javax.swing.JTextField();
-        jButton7 = new javax.swing.JButton();
         panel_principal = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        btn_CREAR = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        btn_LABORATORIO = new javax.swing.JButton();
 
         jd_crear.setTitle("CREAR");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Productos");
+        jLabel1.setText("PRODUCTO");
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel2.setText("ID producto:");
+
+        tf_idProd.setEditable(false);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel3.setText("Nombre:");
@@ -180,8 +204,8 @@ public class MENU extends javax.swing.JFrame {
                             .addComponent(jLabel4))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tf_idProd, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-                            .addComponent(tf_fProd))
+                            .addComponent(tf_fProd, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                            .addComponent(tf_idProd))
                         .addGap(69, 69, 69)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -221,28 +245,24 @@ public class MENU extends javax.swing.JFrame {
                                 .addComponent(rb_SiP)
                                 .addGap(18, 18, 18)
                                 .addComponent(rb_NoP)))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(0, 85, Short.MAX_VALUE))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(233, 233, 233)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(96, 96, 96)
-                        .addComponent(cb_productos, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(178, 178, 178)
                         .addComponent(btn_AgregarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(37, 37, 37)
                         .addComponent(btn_ModificarProducto)))
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cb_productos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -287,6 +307,8 @@ public class MENU extends javax.swing.JFrame {
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel11.setText("Dirección Completa:");
+
+        tF_IDF.setEditable(false);
 
         ta_DireccionF.setColumns(20);
         ta_DireccionF.setRows(5);
@@ -459,6 +481,14 @@ public class MENU extends javax.swing.JFrame {
             }
         });
 
+        btn_CrearPedido.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btn_CrearPedido.setText("Crear Pedido");
+        btn_CrearPedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_CrearPedidoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -471,36 +501,35 @@ public class MENU extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(96, 96, 96)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel10))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1)
-                            .addComponent(tF_IDF, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(96, 96, 96)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel11)
+                                    .addComponent(jLabel10))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jScrollPane1)
+                                    .addComponent(tF_IDF, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(250, 250, 250)
+                                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(250, 250, 250)
-                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(cb_farmacia, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(161, 161, 161)
+                .addGap(102, 102, 102)
                 .addComponent(btn_AgregarFarmacia)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btn_ModificarFarmacia)
+                .addGap(18, 18, 18)
+                .addComponent(btn_CrearPedido)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cb_farmacia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
@@ -513,11 +542,12 @@ public class MENU extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_AgregarFarmacia)
-                    .addComponent(btn_ModificarFarmacia))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btn_ModificarFarmacia)
+                    .addComponent(btn_CrearPedido))
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("Crear Farmacia", jPanel2);
@@ -539,12 +569,201 @@ public class MENU extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jTextField1.setEditable(false);
+
+        jLabel25.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel25.setText("ID Farmacia");
+        jLabel25.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel19.setText("ID Producto:");
+
+        jLabel20.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel20.setText("Nombre:");
+
+        bg_tipoPedido.add(jRadioButton4);
+        jRadioButton4.setText("Higiene");
+
+        bg_tipoPedido.add(jRadioButton3);
+        jRadioButton3.setText("Infantil");
+
+        bg_tipoPedido.add(jRadioButton2);
+        jRadioButton2.setText("Cosmeticos");
+
+        bg_tipoPedido.add(jRadioButton1);
+        jRadioButton1.setSelected(true);
+        jRadioButton1.setText("Farmacia_Casa");
+
+        jLabel23.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel23.setText("Tipo:");
+
+        jLabel21.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel21.setText("Fabricante:");
+
+        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel22.setText("Unidades:");
+
+        js_unidadess.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        jLabel24.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel24.setText("¿Está protegido?");
+
+        bg_protegidoPedido.add(rb_pSi);
+        rb_pSi.setSelected(true);
+        rb_pSi.setText("Si");
+
+        bg_protegidoPedido.add(rb_pNo);
+        rb_pNo.setText("No");
+
+        btn_GuardarPedidos.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btn_GuardarPedidos.setText("Guardar");
+        btn_GuardarPedidos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_GuardarPedidosActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(204, 204, 204)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(91, 91, 91)
+                        .addComponent(jLabel22)
+                        .addGap(28, 28, 28)
+                        .addComponent(js_unidadess, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(107, 107, 107)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel20)
+                                .addGap(18, 18, 18)
+                                .addComponent(tf_nC, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel24)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(rb_pSi)
+                                .addGap(18, 18, 18)
+                                .addComponent(rb_pNo)))))
+                .addContainerGap(77, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btn_GuardarPedidos)
+                .addGap(258, 258, 258))
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGap(91, 91, 91)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                            .addComponent(jLabel21)
+                            .addGap(18, 18, 18)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(tf_fC, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel3Layout.createSequentialGroup()
+                                    .addComponent(jRadioButton1)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jRadioButton2)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jRadioButton3)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jRadioButton4)))
+                            .addContainerGap(83, Short.MAX_VALUE))
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel3Layout.createSequentialGroup()
+                                    .addComponent(jLabel19)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(tf_idC, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel23))
+                            .addGap(0, 0, Short.MAX_VALUE)))))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(53, 53, 53)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(tf_nC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22)
+                    .addComponent(js_unidadess, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel24)
+                    .addComponent(rb_pSi)
+                    .addComponent(rb_pNo))
+                .addGap(71, 71, 71)
+                .addComponent(btn_GuardarPedidos)
+                .addGap(37, 37, 37))
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGap(100, 100, 100)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel19)
+                        .addComponent(tf_idC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(42, 42, 42)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel21)
+                        .addComponent(tf_fC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(30, 30, 30)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel23)
+                        .addComponent(jRadioButton1)
+                        .addComponent(jRadioButton2)
+                        .addComponent(jRadioButton3)
+                        .addComponent(jRadioButton4))
+                    .addContainerGap(183, Short.MAX_VALUE)))
+        );
+
+        btn_EnviarPedido.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btn_EnviarPedido.setText("Enviar Pedido");
+        btn_EnviarPedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_EnviarPedidoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_pedidosLayout = new javax.swing.GroupLayout(jd_pedidos.getContentPane());
+        jd_pedidos.getContentPane().setLayout(jd_pedidosLayout);
+        jd_pedidosLayout.setHorizontalGroup(
+            jd_pedidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_pedidosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_pedidosLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_EnviarPedido)
+                .addGap(251, 251, 251))
+        );
+        jd_pedidosLayout.setVerticalGroup(
+            jd_pedidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_pedidosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(btn_EnviarPedido)
+                .addContainerGap())
+        );
+
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Nombre", "Cantidad"
+                "Categoria", "Nombre", "Cantidad"
             }
         ) {
             Class[] types = new Class [] {
@@ -564,43 +783,30 @@ public class MENU extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jTable1);
 
-        jButton7.setText("jButton7");
-
-        javax.swing.GroupLayout jd_pedidosLayout = new javax.swing.GroupLayout(jd_pedidos.getContentPane());
-        jd_pedidos.getContentPane().setLayout(jd_pedidosLayout);
-        jd_pedidosLayout.setHorizontalGroup(
-            jd_pedidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_pedidosLayout.createSequentialGroup()
-                .addGroup(jd_pedidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jd_pedidosLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jd_pedidosLayout.createSequentialGroup()
-                        .addGap(128, 128, 128)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton7)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        javax.swing.GroupLayout jd_laboratorioLayout = new javax.swing.GroupLayout(jd_laboratorio.getContentPane());
+        jd_laboratorio.getContentPane().setLayout(jd_laboratorioLayout);
+        jd_laboratorioLayout.setHorizontalGroup(
+            jd_laboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_laboratorioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 519, Short.MAX_VALUE)
+                .addContainerGap())
         );
-        jd_pedidosLayout.setVerticalGroup(
-            jd_pedidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_pedidosLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(jd_pedidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7))
-                .addGap(28, 28, 28)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(62, Short.MAX_VALUE))
+        jd_laboratorioLayout.setVerticalGroup(
+            jd_laboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_laboratorioLayout.createSequentialGroup()
+                .addGap(53, 53, 53)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(86, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton1.setText("CREAR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn_CREAR.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btn_CREAR.setText("CREAR");
+        btn_CREAR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_CREARActionPerformed(evt);
             }
         });
 
@@ -616,8 +822,13 @@ public class MENU extends javax.swing.JFrame {
         jButton5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton5.setText("RESOLUCIÓN 4");
 
-        jButton6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton6.setText("PEDIDOS");
+        btn_LABORATORIO.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btn_LABORATORIO.setText("LABORATORIO");
+        btn_LABORATORIO.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_LABORATORIOActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panel_principalLayout = new javax.swing.GroupLayout(panel_principal);
         panel_principal.setLayout(panel_principalLayout);
@@ -626,14 +837,14 @@ public class MENU extends javax.swing.JFrame {
             .addGroup(panel_principalLayout.createSequentialGroup()
                 .addGap(92, 92, 92)
                 .addGroup(panel_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_CREAR, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4)
                     .addComponent(jButton2))
                 .addGap(33, 33, 33)
                 .addGroup(panel_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btn_LABORATORIO, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(72, Short.MAX_VALUE))
         );
         panel_principalLayout.setVerticalGroup(
@@ -641,8 +852,8 @@ public class MENU extends javax.swing.JFrame {
             .addGroup(panel_principalLayout.createSequentialGroup()
                 .addGap(82, 82, 82)
                 .addGroup(panel_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton6))
+                    .addComponent(btn_CREAR)
+                    .addComponent(btn_LABORATORIO))
                 .addGap(49, 49, 49)
                 .addGroup(panel_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
@@ -668,12 +879,12 @@ public class MENU extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btn_CREARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CREARActionPerformed
         jd_crear.setModal(true);
         jd_crear.pack();
         jd_crear.setLocationRelativeTo(jd_crear);
         jd_crear.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btn_CREARActionPerformed
 
     private void btn_AgregarFarmaciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AgregarFarmaciaActionPerformed
         String numID, direc;
@@ -682,12 +893,6 @@ public class MENU extends javax.swing.JFrame {
 
         listFarmacia.add(new Farmacia(numID, direc, listProp, listFarmaceutico));
         System.out.println(listFarmacia);
-
-        DefaultComboBoxModel modelo2 = new DefaultComboBoxModel();
-        for (int i = 0; i < listFarmacia.size(); i++) {
-            modelo2.addElement(listFarmacia.get(i).getNumIdentificacion());
-        }
-        cb_farmacia.setModel(modelo2);
 
         JOptionPane.showMessageDialog(this, "Se agregó la Farmacia");
 
@@ -755,12 +960,6 @@ public class MENU extends javax.swing.JFrame {
         prod.add(new Productos(tf_idProd.getText(), tf_nProd.getText(), tf_fProd.getText(), tipo, precioC, precioV, unidad, protegido));
         System.out.println(prod);
 
-        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
-        for (int i = 0; i < prod.size(); i++) {
-            modelo.addElement(prod.get(i).getIdentificación());
-        }
-        cb_productos.setModel(modelo);
-
         JOptionPane.showMessageDialog(this, "Se agregó el Producto");
 
         tf_idProd.setText("");
@@ -782,7 +981,7 @@ public class MENU extends javax.swing.JFrame {
         double precioC, precioV;
         int unidad;
         boolean protegido = false;
-        
+
         idp = tf_idProd.getText();
         nomP = tf_nProd.getText();
         fabricante = tf_fProd.getText();
@@ -812,6 +1011,7 @@ public class MENU extends javax.swing.JFrame {
             protegido = true;
         }
 
+        /*
         ((Productos) prod.get(cb_productos.getSelectedIndex())).setIdentificación(idp);
         ((Productos) prod.get(cb_productos.getSelectedIndex())).setNombre(nomP);
         ((Productos) prod.get(cb_productos.getSelectedIndex())).setFabricante(fabricante);
@@ -820,10 +1020,9 @@ public class MENU extends javax.swing.JFrame {
         ((Productos) prod.get(cb_productos.getSelectedIndex())).setTipo(tipo);
         ((Productos) prod.get(cb_productos.getSelectedIndex())).setUnidades(unidad);
         ((Productos) prod.get(cb_productos.getSelectedIndex())).setEstaProtegido(protegido);
-        
+         */
         //prod.set(cb_productos.getSelectedIndex(), new Productos(tf_idProd.getText(), tf_nProd.getText(), tf_fProd.getText(), tipo, precioC, precioV, unidad, protegido));
         //System.out.println(prod);
-
         JOptionPane.showMessageDialog(this, "Se modificó éxitosamente el Producto");
 
         tf_idProd.setText("");
@@ -846,13 +1045,7 @@ public class MENU extends javax.swing.JFrame {
         numID = tF_IDF.getText();
         direc = ta_DireccionF.getText();
 
-        ((Farmacia) listFarmacia.get(cb_farmacia.getSelectedIndex())).setNumIdentificacion(numID);
-        ((Farmacia) listFarmacia.get(cb_farmacia.getSelectedIndex())).setDireccion(direc);
-        ((Farmacia) listFarmacia.get(cb_farmacia.getSelectedIndex())).setListPropietario(listProp);
-        ((Farmacia) listFarmacia.get(cb_farmacia.getSelectedIndex())).setListFarmaceutico(listFarmaceutico);
-        
         //listFarmacia.set(cb_farmacia.getSelectedIndex(), new Farmacia(numID, direc, listProp, listFarmaceutico));
-
         System.out.println(listFarmacia);
 
         JOptionPane.showMessageDialog(this, "Se modificó la Farmacia");
@@ -868,9 +1061,6 @@ public class MENU extends javax.swing.JFrame {
         id = tf_idPropietario.getText();
         nombr = tf_nomPropietario.getText();
 
-        ((Persona_Propietario) listProp.get(cb_farmacia.getSelectedIndex())).setNombrePerson(nombr);
-        ((Persona_Propietario) listProp.get(cb_farmacia.getSelectedIndex())).setDNI(id);
-
         //listProp.add(new Persona_Propietario(nombr, id));
         JOptionPane.showMessageDialog(this, "Se modificó el Propietario");
 
@@ -884,14 +1074,89 @@ public class MENU extends javax.swing.JFrame {
         id2 = tf_idFarmaceutico.getText();
         nombr2 = tf_nomFarmaceutico.getText();
 
-        ((Persona_Farmaceutico) listFarmaceutico.get(cb_farmacia.getSelectedIndex())).setNombrePerson(nombr2);
-        ((Persona_Farmaceutico) listFarmaceutico.get(cb_farmacia.getSelectedIndex())).setDNI(id2);
         //listFarmaceutico.add(new Persona_Farmaceutico(nombr2, id2));
         JOptionPane.showMessageDialog(this, "Se modificó el Farmaceutico");
 
         tf_idFarmaceutico.setText("");
         tf_nomFarmaceutico.setText("");
     }//GEN-LAST:event_btn_Modificar_FarmaceuticoActionPerformed
+
+    private void btn_CrearPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CrearPedidoActionPerformed
+        jd_pedidos.setModal(true);
+        jd_pedidos.pack();
+        jd_pedidos.setLocationRelativeTo(jd_pedidos);
+        jd_pedidos.setVisible(true);
+    }//GEN-LAST:event_btn_CrearPedidoActionPerformed
+
+    private void btn_GuardarPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_GuardarPedidosActionPerformed
+        String tipo="";
+        double pc, pv;
+        int cantida;
+        boolean protegido=false;
+        pc = Double.parseDouble(tf_PC.getText());
+        pv = Double.parseDouble(tf_PV.getText());
+        cantida = (int) js_unidadess.getValue();
+        
+        if (rb_fc.isSelected()) {
+            tipo = "Farmacia_Casa";
+        }
+        if (rb_C.isSelected()) {
+            tipo = "Cosmeticos";
+        }
+        if (rb_I.isSelected()) {
+            tipo = "Infantil";
+        }
+        if (rb_H.isSelected()) {
+            tipo = "Higiene";
+        }
+        
+        if (rb_pSi.isSelected()) {
+            protegido = true;
+        }
+        if (rb_pNo.isSelected()) {
+            protegido = true;
+        }
+
+        prod.add(new Productos(tf_idC.getText(), tf_nC.getText(), tf_fC.getText(),tipo, pc, pv, cantida, protegido));
+        JOptionPane.showMessageDialog(this, "Se guardó correctamente");
+        System.out.println(prod);
+
+        tf_idC.setText("");
+        tf_nC.setText("");
+        tf_fC.setText("");
+        js_unidadess.setValue(0);
+    }//GEN-LAST:event_btn_GuardarPedidosActionPerformed
+
+    private void btn_EnviarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EnviarPedidoActionPerformed
+        int cantida1;
+        cantida1 = (int) js_unidadess.getValue();
+        ped.add(new Pedido(prod,cantida1));
+        System.out.println(ped);
+        JOptionPane.showMessageDialog(this, "Se está procesando...");
+
+        try {
+            // agregar a la tabla
+            DefaultTableModel mod, mod1, mod2, mod3;
+            mod = (DefaultTableModel) Main_Laboratorio.jTable1.getModel();
+            Object[] newrow = new Object[mod.getColumnCount()];
+            for (int i = 0; i < ped.size(); i++) {
+                newrow[0] = ped.get(i).getListProductoss().get(i).getTipo();
+                newrow[1] = ped.get(i).getListProductoss().get(i).getNombre();
+                newrow[2] = ped.get(i).getUnid();
+            }
+            mod.addRow(newrow);
+
+        } catch (Exception e) {
+        }
+        
+    }//GEN-LAST:event_btn_EnviarPedidoActionPerformed
+
+    private void btn_LABORATORIOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LABORATORIOActionPerformed
+        jd_laboratorio.setModal(true);
+        jd_laboratorio.pack();
+        jd_laboratorio.setLocationRelativeTo(jd_pedidos);
+        jd_laboratorio.setVisible(true);
+    }//GEN-LAST:event_btn_LABORATORIOActionPerformed
 
     /**
      * @param args the command line arguments
@@ -930,24 +1195,26 @@ public class MENU extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup bg_protegido;
+    private javax.swing.ButtonGroup bg_protegidoPedido;
     private javax.swing.ButtonGroup bg_tipo;
+    private javax.swing.ButtonGroup bg_tipoPedido;
     private javax.swing.JButton btn_AgregarFarmaceutico;
     private javax.swing.JButton btn_AgregarFarmacia;
     private javax.swing.JButton btn_AgregarProducto;
+    private javax.swing.JButton btn_CREAR;
+    private javax.swing.JButton btn_CrearPedido;
+    private javax.swing.JButton btn_EnviarPedido;
+    private javax.swing.JButton btn_GuardarPedidos;
+    private javax.swing.JButton btn_LABORATORIO;
     private javax.swing.JButton btn_ModificarFarmacia;
     private javax.swing.JButton btn_ModificarProducto;
     private javax.swing.JButton btn_Modificar_Farmaceutico;
     private javax.swing.JButton btn_Modificar_Propietario;
     private javax.swing.JButton btn_agregarPropietario;
-    private javax.swing.JComboBox<String> cb_farmacia;
-    private javax.swing.JComboBox<String> cb_productos;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -958,7 +1225,14 @@ public class MENU extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -968,16 +1242,23 @@ public class MENU extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
+    public static javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JDialog jd_crear;
+    private javax.swing.JDialog jd_laboratorio;
     private javax.swing.JDialog jd_pedidos;
     private javax.swing.JSpinner js_U;
+    private javax.swing.JSpinner js_unidadess;
     private javax.swing.JPanel panel_principal;
     private javax.swing.JRadioButton rb_C;
     private javax.swing.JRadioButton rb_H;
@@ -985,14 +1266,19 @@ public class MENU extends javax.swing.JFrame {
     private javax.swing.JRadioButton rb_NoP;
     private javax.swing.JRadioButton rb_SiP;
     private javax.swing.JRadioButton rb_fc;
+    private javax.swing.JRadioButton rb_pNo;
+    private javax.swing.JRadioButton rb_pSi;
     private javax.swing.JTextField tF_IDF;
     private javax.swing.JTextArea ta_DireccionF;
     private javax.swing.JTextField tf_PC;
     private javax.swing.JTextField tf_PV;
+    private javax.swing.JTextField tf_fC;
     private javax.swing.JTextField tf_fProd;
+    private javax.swing.JTextField tf_idC;
     private javax.swing.JTextField tf_idFarmaceutico;
     private javax.swing.JTextField tf_idProd;
     private javax.swing.JTextField tf_idPropietario;
+    private javax.swing.JTextField tf_nC;
     private javax.swing.JTextField tf_nProd;
     private javax.swing.JTextField tf_nomFarmaceutico;
     private javax.swing.JTextField tf_nomPropietario;
@@ -1002,5 +1288,6 @@ public class MENU extends javax.swing.JFrame {
     ArrayList<Persona_Propietario> listProp = new ArrayList();
     ArrayList<Persona_Farmaceutico> listFarmaceutico = new ArrayList();
     ArrayList<Farmacia> listFarmacia = new ArrayList();
+    ArrayList<Pedido> ped = new ArrayList();
 
 }
