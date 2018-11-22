@@ -116,6 +116,7 @@ public class MENU extends javax.swing.JFrame {
         jd_laboratorio = new javax.swing.JDialog();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        btn_vender = new javax.swing.JButton();
         panel_principal = new javax.swing.JPanel();
         btn_CREAR = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -782,6 +783,9 @@ public class MENU extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jTable1);
 
+        btn_vender.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btn_vender.setText("Vender");
+
         javax.swing.GroupLayout jd_laboratorioLayout = new javax.swing.GroupLayout(jd_laboratorio.getContentPane());
         jd_laboratorio.getContentPane().setLayout(jd_laboratorioLayout);
         jd_laboratorioLayout.setHorizontalGroup(
@@ -790,13 +794,19 @@ public class MENU extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 519, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(jd_laboratorioLayout.createSequentialGroup()
+                .addGap(226, 226, 226)
+                .addComponent(btn_vender)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jd_laboratorioLayout.setVerticalGroup(
             jd_laboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_laboratorioLayout.createSequentialGroup()
                 .addGap(53, 53, 53)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addGap(28, 28, 28)
+                .addComponent(btn_vender)
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1225,6 +1235,7 @@ public class MENU extends javax.swing.JFrame {
     private javax.swing.JButton btn_Modificar_Farmaceutico;
     private javax.swing.JButton btn_Modificar_Propietario;
     private javax.swing.JButton btn_agregarPropietario;
+    private javax.swing.JButton btn_vender;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
