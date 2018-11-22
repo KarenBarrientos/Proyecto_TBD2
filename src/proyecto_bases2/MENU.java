@@ -121,6 +121,12 @@ public class MENU extends javax.swing.JFrame {
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jLabel27 = new javax.swing.JLabel();
         tf_pagar = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jLabel29 = new javax.swing.JLabel();
+        jd_Almacen = new javax.swing.JDialog();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jt_almacen = new javax.swing.JTable();
+        jLabel28 = new javax.swing.JLabel();
         panel_principal = new javax.swing.JPanel();
         btn_CREAR = new javax.swing.JButton();
         btn_LABORATORIO = new javax.swing.JButton();
@@ -786,30 +792,48 @@ public class MENU extends javax.swing.JFrame {
         jLabel27.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel27.setText("Fecha Entrega:");
 
+        jButton1.setText("Ver Almacen Farmacia");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jLabel29.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel29.setText("Total:");
+
         javax.swing.GroupLayout jd_laboratorioLayout = new javax.swing.GroupLayout(jd_laboratorio.getContentPane());
         jd_laboratorio.getContentPane().setLayout(jd_laboratorioLayout);
         jd_laboratorioLayout.setHorizontalGroup(
             jd_laboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_laboratorioLayout.createSequentialGroup()
                 .addGroup(jd_laboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_laboratorioLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton1))
                     .addGroup(jd_laboratorioLayout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addGroup(jd_laboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jd_laboratorioLayout.createSequentialGroup()
-                                .addComponent(jLabel26)
+                        .addGroup(jd_laboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_laboratorioLayout.createSequentialGroup()
+                                .addGap(35, 35, 35)
+                                .addGroup(jd_laboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel26)
+                                    .addComponent(jLabel29))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jd_laboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(tf_pagar, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
-                                    .addComponent(tf_precioVenta))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(tf_pagar, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tf_precioVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(54, 54, 54)
                                 .addComponent(jLabel27)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jd_laboratorioLayout.createSequentialGroup()
-                        .addGap(228, 228, 228)
-                        .addComponent(btn_vender)))
-                .addContainerGap(84, Short.MAX_VALUE))
+                                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jd_laboratorioLayout.createSequentialGroup()
+                                .addGap(216, 216, 216)
+                                .addComponent(btn_vender))
+                            .addGroup(jd_laboratorioLayout.createSequentialGroup()
+                                .addGap(35, 35, 35)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 42, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jd_laboratorioLayout.setVerticalGroup(
             jd_laboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -824,10 +848,60 @@ public class MENU extends javax.swing.JFrame {
                         .addComponent(jLabel27))
                     .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
-                .addComponent(tf_pagar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addGroup(jd_laboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tf_pagar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel29))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addComponent(btn_vender)
-                .addGap(40, 40, 40))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1)
+                .addGap(9, 9, 9))
+        );
+
+        jt_almacen.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Categoría", "Nombre", "Unidades"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(jt_almacen);
+
+        jLabel28.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel28.setText("Almacén Farmacia");
+        jLabel28.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout jd_AlmacenLayout = new javax.swing.GroupLayout(jd_Almacen.getContentPane());
+        jd_Almacen.getContentPane().setLayout(jd_AlmacenLayout);
+        jd_AlmacenLayout.setHorizontalGroup(
+            jd_AlmacenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_AlmacenLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 486, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(jd_AlmacenLayout.createSequentialGroup()
+                .addGap(188, 188, 188)
+                .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jd_AlmacenLayout.setVerticalGroup(
+            jd_AlmacenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_AlmacenLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -884,7 +958,7 @@ public class MENU extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_CREARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CREARActionPerformed
-        jd_crear.setModal(true);
+        //jd_crear.setModal(true);
         jd_crear.pack();
         jd_crear.setLocationRelativeTo(jd_crear);
         jd_crear.setVisible(true);
@@ -895,7 +969,7 @@ public class MENU extends javax.swing.JFrame {
         numID = tF_IDF.getText();
         direc = ta_DireccionF.getText();
 
-        //CrudFarmacia.create_farmacia(numID, direc, people, prod);
+        CrudFarmacia.create_farmacia(numID, direc, people, prod);
         listFarmacia.add(new Farmacia(numID, direc, listProp, listFarmaceutico));
         System.out.println(listFarmacia);
 
@@ -969,6 +1043,21 @@ public class MENU extends javax.swing.JFrame {
         System.out.println(prod);
 
         JOptionPane.showMessageDialog(this, "Se agregó el Producto");
+        
+        try {
+            // agregar a la tabla
+            DefaultTableModel mod;
+            mod = (DefaultTableModel) jt_almacen.getModel();
+            Object[] newrow = new Object[mod.getColumnCount()];
+            for (int i = 0; i < prod.size(); i++) {
+                newrow[0] = prod.get(i).getTipo();
+                newrow[1] = prod.get(i).getNombre();
+                newrow[2] = prod.get(i).getUnidades();
+            }
+            mod.addRow(newrow);
+
+        } catch (Exception e) {
+        }
 
         tf_idProd.setText("");
         tf_nProd.setText("");
@@ -988,13 +1077,13 @@ public class MENU extends javax.swing.JFrame {
         String numID, direc;
         numID = tF_IDF.getText();
         direc = ta_DireccionF.getText();
-        /*
+        
         try {
             CrudFarmacia.update_farmacia(numID, direc, pro);
         } catch (IOException ex) {
             Logger.getLogger(MENU.class.getName()).log(Level.SEVERE, null, ex);
         }
-         */
+        
         //listFarmacia.set(cb_farmacia.getSelectedIndex(), new Farmacia(numID, direc, listProp, listFarmaceutico));
         System.out.println(listFarmacia);
 
@@ -1073,6 +1162,16 @@ public class MENU extends javax.swing.JFrame {
 
         JOptionPane.showMessageDialog(this, "Se guardó correctamente");
         System.out.println(prod);
+        
+        DefaultTableModel mod3;
+            mod3 = (DefaultTableModel) jt_almacen.getModel();
+            Object[] newrow2 = new Object[mod3.getColumnCount()];
+            for (int i = 0; i < prod.size(); i++) {
+                newrow2[0] = prod.get(i).getTipo();
+                newrow2[1] = prod.get(i).getNombre();
+                newrow2[2] = prod.get(i).getUnidades();
+            }
+            mod3.addRow(newrow2);
 
         tf_idC.setText("");
         tf_nC.setText("");
@@ -1103,14 +1202,14 @@ public class MENU extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_EnviarPedidoActionPerformed
 
     private void btn_LABORATORIOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LABORATORIOActionPerformed
-        jd_laboratorio.setModal(true);
+        //jd_laboratorio.setModal(true);
         jd_laboratorio.pack();
         jd_laboratorio.setLocationRelativeTo(jd_pedidos);
         jd_laboratorio.setVisible(true);
     }//GEN-LAST:event_btn_LABORATORIOActionPerformed
 
     private void btn_venderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_venderActionPerformed
-        DefaultTableModel mode;
+        DefaultTableModel mode, mode2;
         int filaSelec = jTable1.getSelectedRow();
 
         try {
@@ -1132,11 +1231,35 @@ public class MENU extends javax.swing.JFrame {
                 importe = String.valueOf(x);
 
                 calcula = (Double.parseDouble(importe));
-                precioV = precioV + calcula;
+                precioV = calcula;
 
                 total = total + precioV;
 
                 tf_pagar.setText("" + total);
+
+                /*
+                String iden, iden2, nom, nom2, fabri, cate2, tip, tip2;
+                int can, can2;
+                double preV, preV2, preC = 0;
+                boolean prot;
+                
+                for (Object lol : listFarmacia) {
+                    if (lol instanceof Productos) {
+                        iden = ((Productos) lol).getIdentificación();
+                        nom = ((Productos) lol).getNombre();
+                        fabri = ((Productos) lol).getFabricante();
+                        tip = ((Productos) lol).getTipo();
+                        preC = ((Productos) lol).getPrecioCosto();
+                        preV = ((Productos) lol).getPrecioVenta();
+                        can = ((Productos) lol).getUnidades();
+                        prod.add(new Productos(iden,nom,fabri,tip,preC,preV,can,true));
+                    }
+                    mode2 = (DefaultTableModel) jt_almacen.getModel();
+                    tip2 = jt_almacen.getValueAt(filaSelec, 0).toString();
+                    nom2 = jt_almacen.getValueAt(filaSelec, 1).toString();
+                    cate2 = jt_almacen.getValueAt(filaSelec, 2).toString();
+                }
+                */
 
             }
 
@@ -1146,6 +1269,13 @@ public class MENU extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_btn_venderActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        //jd_Almacen.setModal(true);
+        jd_Almacen.pack();
+        jd_Almacen.setLocationRelativeTo(jd_Almacen);
+        jd_Almacen.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1200,6 +1330,7 @@ public class MENU extends javax.swing.JFrame {
     private javax.swing.JButton btn_Modificar_Propietario;
     private javax.swing.JButton btn_agregarPropietario;
     private javax.swing.JButton btn_vender;
+    private javax.swing.JButton jButton1;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1221,6 +1352,8 @@ public class MENU extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1239,14 +1372,17 @@ public class MENU extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     public static javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JDialog jd_Almacen;
     private javax.swing.JDialog jd_crear;
     private javax.swing.JDialog jd_laboratorio;
     private javax.swing.JDialog jd_pedidos;
     private javax.swing.JSpinner js_U;
     private javax.swing.JSpinner js_unidadess;
+    private javax.swing.JTable jt_almacen;
     private javax.swing.JPanel panel_principal;
     private javax.swing.JRadioButton rb_C;
     private javax.swing.JRadioButton rb_H;
